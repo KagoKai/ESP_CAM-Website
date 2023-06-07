@@ -41,5 +41,5 @@ if(isset($_POST["submit"])){
 }
 
 // Display status message
-echo $statusMsg;
+return $statusMsg;
 ?>

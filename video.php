@@ -11,6 +11,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESP Website</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $('#uploadForm').on('submit',function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        // Using ajax to update the Webpage asynchronously
+        $.ajax({
+            type:'POST',
+            url: 'upload.php',
+            data:$(this).serialize(),
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(result)
+            {
+                alert("Submit successfully !");
+            }
+        });
+        return false;
+        });
+    </script>
 </head>
 
 <body>
@@ -32,7 +54,7 @@
 
             <div id="main">
                 <h2 class="greeting">Kho lưu trữ video</h2>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form name="uploadForm" method="post" enctype="multipart/form-data">
                     Lựa chọn file muốn tải lên server: 
                     <input type="file" name="file">
                     <input type="submit" name="submit" value="Tải lên">
