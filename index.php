@@ -21,7 +21,7 @@
                 <ul class="navlist">
                     <li><a class="active" href="">Main page</a></li>
                     <li><a  href="video.php">Video</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="live.php">Live</a></li>
                 </ul>
             </div>
 

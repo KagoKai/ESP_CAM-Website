@@ -4,11 +4,11 @@ include 'dbConfig.php';
 $statusMsg = '';
 
 // File upload path
-$targetDir = "images/";
+$targetDir = "Videos/";
 
 if(isset($_POST["submit"])){
-    if(!empty($_FILES["file"]["name"])){
-        $fileName = basename($_FILES["file"]["name"]);
+    if(!empty($_FILES["imageFile"]["name"])){
+        $fileName = basename($_FILES["imageFile"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         
@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
 
         if(in_array($fileType, $allowTypes)){
             // Upload file to server
-            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+            if(move_uploaded_file($_FILES["imageFile"]["tmp_name"], $targetFilePath)){
                 // Insert image file name into database
                 $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
 

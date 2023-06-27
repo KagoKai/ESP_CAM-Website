@@ -14,7 +14,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
-        $('#uploadForm').on('submit',function(e){
+        $('#uploadForm').on('submit', function(e){
         e.preventDefault();
         var formData = new FormData(this);
         // Using ajax to update the Webpage asynchronously
@@ -48,7 +48,7 @@
                 <ul class="navlist">
                     <li><a href="index.php">Main page</a></li>
                     <li><a class="active" href="">Video</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="live.php">Live</a></li>
                 </ul>
             </div>
 
@@ -56,7 +56,7 @@
                 <h2 class="greeting">Kho lưu trữ video</h2>
                 <form name="uploadForm" method="post" enctype="multipart/form-data">
                     Lựa chọn file muốn tải lên server: 
-                    <input type="file" name="file">
+                    <input type="file" name="imageFile">
                     <input type="submit" name="submit" value="Tải lên">
                 </form>
                 <div id="display">
